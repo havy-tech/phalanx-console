@@ -1,6 +1,6 @@
-# convoy/console
+# phalanx/console
 
-Build CLI applications with the same scope-driven concurrency that powers Convoy HTTP servers. Define commands as closures, group them, load them from directories, and let the framework handle argument parsing, validation, and help generation.
+Build CLI applications with the same scope-driven concurrency that powers Phalanx HTTP servers. Define commands as closures, group them, load them from directories, and let the framework handle argument parsing, validation, and help generation.
 
 ## Table of Contents
 
@@ -16,18 +16,20 @@ Build CLI applications with the same scope-driven concurrency that powers Convoy
 ## Installation
 
 ```bash
-composer require convoy/console
+composer require phalanx/console
 ```
 
-Requires PHP 8.4+ and `convoy/core`.
+Requires PHP 8.4+ and `phalanx/core`.
 
 ## Quick Start
 
 ```php
-use Convoy\Console\Command;
-use Convoy\Console\CommandGroup;
-use Convoy\Console\CommandScope;
-use Convoy\Console\ConsoleRunner;
+<?php
+
+use Phalanx\Console\Command;
+use Phalanx\Console\CommandGroup;
+use Phalanx\Console\CommandScope;
+use Phalanx\Console\ConsoleRunner;
 
 $app = Application::starting()->compile();
 
@@ -55,12 +57,14 @@ Hello, Jonathan!
 
 ## Defining Commands
 
-A `Command` wraps a closure and a `CommandConfig`. The closure receives a `CommandScope` at dispatch time, giving it access to parsed arguments, options, and the full Convoy execution scope.
+A `Command` wraps a closure and a `CommandConfig`. The closure receives a `CommandScope` at dispatch time, giving it access to parsed arguments, options, and the full Phalanx execution scope.
 
 ```php
-use Convoy\Console\Command;
-use Convoy\Console\CommandConfig;
-use Convoy\Console\CommandScope;
+<?php
+
+use Phalanx\Console\Command;
+use Phalanx\Console\CommandConfig;
+use Phalanx\Console\CommandScope;
 
 $migrate = new Command(
     fn: static function (CommandScope $scope): int {
@@ -95,7 +99,9 @@ The `config` parameter accepts either a `CommandConfig` instance or a closure th
 `CommandConfig` builds up arguments and options through an immutable fluent API:
 
 ```php
-use Convoy\Console\CommandConfig;
+<?php
+
+use Phalanx\Console\CommandConfig;
 
 $config = (new CommandConfig())
     ->withDescription('Deploy the application')
@@ -112,7 +118,9 @@ Each call returns a new `CommandConfig` -- the original stays untouched.
 `CommandGroup` collects commands into a named registry. Build one from an array, or use the fluent builder:
 
 ```php
-use Convoy\Console\CommandGroup;
+<?php
+
+use Phalanx\Console\CommandGroup;
 
 // From an array
 $commands = CommandGroup::of([
@@ -136,7 +144,9 @@ $all = $coreCommands->merge($pluginCommands);
 `CommandLoader` scans a directory and loads every `.php` file that returns a `CommandGroup`:
 
 ```php
-use Convoy\Console\CommandLoader;
+<?php
+
+use Phalanx\Console\CommandLoader;
 
 // Load all command files from a directory
 $commands = CommandLoader::loadDirectory(__DIR__ . '/commands');
@@ -145,10 +155,12 @@ $commands = CommandLoader::loadDirectory(__DIR__ . '/commands');
 Each file returns a `CommandGroup`:
 
 ```php
+<?php
+
 // commands/deploy.php
-use Convoy\Console\Command;
-use Convoy\Console\CommandGroup;
-use Convoy\Console\CommandScope;
+use Phalanx\Console\Command;
+use Phalanx\Console\CommandGroup;
+use Phalanx\Console\CommandScope;
 
 return CommandGroup::of([
     'deploy' => new Command(
@@ -164,6 +176,8 @@ return CommandGroup::of([
 `ConsoleRunner` accepts directory paths directly and handles the loading:
 
 ```php
+<?php
+
 // Load from one or more directories
 $runner = ConsoleRunner::withCommands($app, __DIR__ . '/commands');
 $runner = ConsoleRunner::withCommands($app, [__DIR__ . '/commands', __DIR__ . '/plugins']);
@@ -175,12 +189,14 @@ $runner = ConsoleRunner::withCommands($app, [__DIR__ . '/commands', __DIR__ . '/
 
 ## Running Concurrent Work
 
-Because `CommandScope` extends `ExecutionScope`, every command has access to Convoy's concurrency primitives. A CLI tool that fetches data from multiple sources concurrently:
+Because `CommandScope` extends `ExecutionScope`, every command has access to Phalanx's concurrency primitives. A CLI tool that fetches data from multiple sources concurrently:
 
 ```php
-use Convoy\Console\Command;
-use Convoy\Console\CommandScope;
-use Convoy\Task;
+<?php
+
+use Phalanx\Console\Command;
+use Phalanx\Console\CommandScope;
+use Phalanx\Task;
 
 $healthCheck = new Command(
     fn: static function (CommandScope $scope): int {

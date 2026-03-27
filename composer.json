@@ -1,10 +1,10 @@
 {
-    "name": "convoy/console",
-    "description": "CLI application framework for Convoy",
+    "name": "phalanx/console",
+    "description": "CLI application framework for Phalanx",
     "license": "MIT",
     "type": "library",
-    "keywords": ["cli", "console", "async", "reactphp", "convoy"],
-    "homepage": "https://github.com/havy-tech/convoy-console",
+    "keywords": ["cli", "console", "async", "reactphp", "phalanx"],
+    "homepage": "https://github.com/havy-tech/phalanx-console",
     "authors": [
         {
             "name": "Jonathan Havens",
@@ -13,20 +13,20 @@
     ],
     "require": {
         "php": "^8.4",
-        "convoy/core": "^1.0"
+        "phalanx/core": "^1.0"
     },
     "suggest": {
-        "convoy/stream": "For streaming data through console commands",
-        "convoy/parallel": "For worker process parallelism in CLI tasks"
+        "phalanx/stream": "For streaming data through console commands",
+        "phalanx/parallel": "For worker process parallelism in CLI tasks"
     },
     "autoload": {
         "psr-4": {
-            "Convoy\\Console\\": "src/"
+            "Phalanx\\Console\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Convoy\\Console\\Tests\\": "tests/"
+            "Phalanx\\Console\\Tests\\": "tests/"
         }
     },
     "extra": {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console\Tests\Unit;
+namespace Phalanx\Console\Tests\Unit;
 
-use Convoy\Console\ArgvParser;
-use Convoy\Console\CommandConfig;
-use Convoy\Console\InvalidInputException;
+use Phalanx\Console\ArgvParser;
+use Phalanx\Console\CommandConfig;
+use Phalanx\Console\InvalidInputException;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -32,10 +32,10 @@ final class ArgvParserTest extends TestCase
             ->withArgument('image')
             ->withOption('name', shorthand: 'n', requiresValue: true);
 
-        $input = ArgvParser::parse(['nginx', '--name=convoy-test'], $config);
+        $input = ArgvParser::parse(['nginx', '--name=phalanx-test'], $config);
 
         self::assertSame('nginx', $input->args->get('image'));
-        self::assertSame('convoy-test', $input->options->get('name'));
+        self::assertSame('phalanx-test', $input->options->get('name'));
     }
 
     #[Test]
@@ -44,9 +44,9 @@ final class ArgvParserTest extends TestCase
         $config = new CommandConfig()
             ->withOption('name', requiresValue: true);
 
-        $input = ArgvParser::parse(['--name', 'convoy-test'], $config);
+        $input = ArgvParser::parse(['--name', 'phalanx-test'], $config);
 
-        self::assertSame('convoy-test', $input->options->get('name'));
+        self::assertSame('phalanx-test', $input->options->get('name'));
     }
 
     #[Test]

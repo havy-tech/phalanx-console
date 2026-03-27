@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Tests\Console\Integration;
+namespace Phalanx\Tests\Console\Integration;
 
-use Convoy\Application;
-use Convoy\Console\Command;
-use Convoy\Console\CommandConfig;
-use Convoy\Console\CommandGroup;
-use Convoy\Task\Task;
+use Phalanx\Application;
+use Phalanx\Console\Command;
+use Phalanx\Console\CommandConfig;
+use Phalanx\Console\CommandGroup;
+use Phalanx\Task\Task;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

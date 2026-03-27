@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
-use Convoy\AppHost;
-use Convoy\Handler\HandlerGroup;
-use Convoy\Task\Executable;
-use Convoy\Task\Scopeable;
+use Phalanx\AppHost;
+use Phalanx\Handler\HandlerGroup;
+use Phalanx\Task\Executable;
+use Phalanx\Task\Scopeable;
 use RuntimeException;
 
 final class ConsoleRunner

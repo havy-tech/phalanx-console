@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
-use Convoy\Handler\HandlerConfig;
+use Phalanx\Handler\HandlerConfig;
 
 /**
  * Console command configuration.

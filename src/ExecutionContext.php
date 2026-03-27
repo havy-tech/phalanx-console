@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
-use Convoy\ExecutionScope;
-use Convoy\Support\ExecutionScopeDelegate;
+use Phalanx\ExecutionScope;
+use Phalanx\Support\ExecutionScopeDelegate;
 
 final class ExecutionContext implements CommandScope
 {

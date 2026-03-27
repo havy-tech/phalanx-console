@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
 final class CommandOption
 {

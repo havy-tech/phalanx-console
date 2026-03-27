@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
 use Closure;
-use Convoy\Scope;
-use Convoy\Task\Scopeable;
+use Phalanx\Scope;
+use Phalanx\Task\Scopeable;
 
 /**
  * CLI command handler as an invokable with fn + config.

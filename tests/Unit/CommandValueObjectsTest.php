@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console\Tests\Unit;
+namespace Phalanx\Console\Tests\Unit;
 
-use Convoy\Console\CommandArgs;
-use Convoy\Console\CommandOptions;
-use Convoy\Console\InvalidInputException;
+use Phalanx\Console\CommandArgs;
+use Phalanx\Console\CommandOptions;
+use Phalanx\Console\InvalidInputException;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

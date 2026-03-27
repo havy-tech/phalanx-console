@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
-use Convoy\Handler\HandlerGroup;
-use Convoy\Handler\HandlerLoader;
-use Convoy\Scope;
+use Phalanx\Handler\HandlerGroup;
+use Phalanx\Handler\HandlerLoader;
+use Phalanx\Scope;
 use RuntimeException;
 
 final class CommandLoader

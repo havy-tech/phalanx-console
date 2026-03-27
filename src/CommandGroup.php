@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console;
+namespace Phalanx\Console;
 
-use Convoy\ExecutionScope;
-use Convoy\Handler\Handler;
-use Convoy\Handler\HandlerConfig;
-use Convoy\Handler\HandlerGroup;
-use Convoy\Task\Executable;
-use Convoy\Task\Scopeable;
+use Phalanx\ExecutionScope;
+use Phalanx\Handler\Handler;
+use Phalanx\Handler\HandlerConfig;
+use Phalanx\Handler\HandlerGroup;
+use Phalanx\Task\Executable;
+use Phalanx\Task\Scopeable;
 
 /**
  * Typed collection of CLI commands.

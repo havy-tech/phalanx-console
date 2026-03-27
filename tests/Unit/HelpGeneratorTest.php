@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Convoy\Console\Tests\Unit;
+namespace Phalanx\Console\Tests\Unit;
 
-use Convoy\Console\CommandConfig;
-use Convoy\Console\HelpGenerator;
+use Phalanx\Console\CommandConfig;
+use Phalanx\Console\HelpGenerator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
